@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import '@/Config/FaIcons.js'
+import '@/Styles/Global.scss'
 
 Vue.config.productionTip = false
 
