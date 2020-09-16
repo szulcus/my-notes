@@ -12,10 +12,12 @@
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/vue-fontawesome": "^2.0.0",
     "core-js": "^3.6.5",
+    "firebase": "^7.20.0",
     "gh-pages": "^2.0.1",
     "react-icons": "^3.11.0",
     "vue": "^2.6.11",
     "vue-awesome": "^4.1.0",
+    "vue-fragment": "^1.5.1",
     "vue-router": "^3.2.0"
   },
   "devDependencies": {

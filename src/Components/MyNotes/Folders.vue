@@ -1,25 +1,12 @@
 <template>
 	<div
-		:style="{
-			transform: active ? 'translateX(calc(-50vw + 60px))' : ''
-		}"
-		:class="['add-wrapper', {show: show, hide: hide}]"
+		:class="['add-wrapper', {hide: hide}]"
 	>
 		<div
-			:style="{
-				transform: active ? 'scale(1)' : '',
-				opacity: active ? '1' : ''
-			}"
 			class="add-item"
 			id="add"
 		>
 			<fa-icon icon="folder"/>
-		</div>
-		<div v-if="!active" class="add-item">
-			<fa-icon icon="save" />
-		</div>
-		<div v-if="!active" class="add-item">
-			<fa-icon icon="trash"/>
 		</div>
 	</div>
 </template>
@@ -28,12 +15,8 @@
 	export default {
 		name: "Folders",
 		props: [
-			'show',
-			'hide',
-			'active'
-		],
-		methods: {
-		}
+			'hide'
+		]
 	}
 </script>
 
@@ -48,17 +31,8 @@
 		z-index: 2;
 		transition: transform 0.5s ease;
 	}
-	.show {
-		.add-item {
-			display: flex;
-			&:first-child {
-				transform: scale(0.7);
-				opacity: 0.5;
-			}
-		}
-	}
 	.hide {
-		opacity: 0;
+		display: none;
 	}
 	.add-item {
 		width: 50px;

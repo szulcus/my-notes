@@ -1,5 +1,5 @@
 @import 'https://fonts.googleapis.com/css2?family=Grandstander:wght@300;400;700&display=swap';
-
+@import 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
 @import "@/Styles/Variables.scss";
 * {
 	box-sizing: border-box;
@@ -8,15 +8,21 @@
 		box-sizing: border-box;
 	}
 }
+html {
+	height: 100%;
+}
 body {
+	min-height: 100%;
 	margin: 0;
-	padding: 20px;;
 	background-color: $bg;
 	color: $primary;
 	font-size: 16px;
 	font-family: 'Grandstander', sans-serif;
+	#app {
+		height: calc(100 * var(--vh));
+		padding: 20px;
+	}
 }
-
 input,
 textarea,
 button {
@@ -24,7 +30,7 @@ button {
 	font-family: 'Grandstander', sans-serif;
 	background: transparent;
 	border: none;
-	margin: 10px;
+	margin: 10px 0;
 	padding: 10px;
 	outline: none;
 }
@@ -38,12 +44,12 @@ button {
 	}
 }
 input {
-	border-bottom: 3px solid rgb($decorative, 0.5);
+	border-bottom: 2px solid $decorative;
 	color: $primary;
 	@include placeholder();
 }
 textarea {
-	border: 3px solid rgb($decorative, 0.5);
+	border: 2px solid $decorative;
 	border-radius: 10px;
 	margin: 10px;
 	padding: 10px;

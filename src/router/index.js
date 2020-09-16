@@ -12,9 +12,9 @@ Vue.use(VueRouter)
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import('../Views/About.vue')
+    path: '/login',
+    name: 'Login',
+    component: () => import('../Views/Login.vue')
   }
 ]
 

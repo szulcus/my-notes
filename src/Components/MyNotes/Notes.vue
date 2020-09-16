@@ -1,9 +1,9 @@
 <template>
-	<div class="notes-wrapper">
+	<div :class="['notes-wrapper', {hide: show}]">
 		<div
 			class="note"
 			v-for="note in notes"
-			:key="note.createdAt"
+			:key="note.id"
 			@click="() => $emit('note-showed', note)"
 		>
 			<h3
@@ -19,7 +19,7 @@
 			>
 				<span v-if="note.content && note.type === 'text'">{{note.content}}</span>
 				<ul v-else class="list">
-					<li class="list-item" v-for="item in note.content" :key="item.createdAt">{{item}}</li>
+					<li class="list-item" v-for="(item, index) in note.content" :key="index">{{item.content}}</li>
 				</ul>
 			</p>
 		</div>
@@ -29,13 +29,9 @@
 <script>
 	export default {
 		name: "Notes",
-		props: [
-			'notes'
-		],
-		data() {
-			return {
-				
-			}
+		props: {
+			notes: Array,
+			show: String
 		}
 	}
 </script>
@@ -53,7 +49,11 @@
 			width: 0;
 		}
 	}
+	.hide {
+		display: none;
+	}
 	.note {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -65,6 +65,9 @@
 			&:hover {
 				cursor: pointer;
 				transform: scale(0.99)
+			}
+			&:hover .text .delete {
+				display: block;
 			}
 		}
 	}
