@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/Views/Home.vue'
+// import Home from '@/Views/Home.vue'
+import Home from '../Views/Home.vue'
 import '@/Styles/Global.scss'
 
 Vue.use(VueRouter)
@@ -14,12 +15,12 @@ Vue.use(VueRouter)
   {
     path: '/login',
     name: 'Login',
-    component: () => import('@/Views/Login.vue')
+    component: () => import('../Views/Login.vue')
   },
   {
     path: '/register',
     name: 'Register',
-    component: () => import('@/Views/Register.vue')
+    component: () => import('../Views/Register.vue')
   },
   {
     path: '/users/:email',
