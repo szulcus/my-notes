@@ -1,9 +1,10 @@
 <template>
 	<div class="login-wrapper">
-		<header class="title">
-			Logowanie
-		</header>
-		<Form />
+		<Form
+			type="login"
+			:error="error"
+			@submited="login"
+		/>
 	</div>
 </template>
 
@@ -16,33 +17,26 @@
 		},
 		data() {
 			return {
-				data: 'daata'
+				error: {}
+			}
+		},
+		methods: {
+			async login(email, password) {
+				try {
+					const user = this.$au.signInWithEmailAndPassword(email, password)
+					console.log(user)
+				}
+				catch(err) {
+					this.error = err
+				}
 			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.title {
-		display: none;
-		margin: 20px 0;
-		font-size: 30px;
-		font-weight: bold;
-		letter-spacing: 1px;
-		&::first-letter {
-			color: $decorative;
-		}
-		@media (min-height: 350px) {
-			display: block;
-		}
-	}
 	.login-wrapper {
 		width: 100%;
 		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
 	}
 </style>

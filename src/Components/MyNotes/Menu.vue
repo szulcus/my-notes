@@ -19,10 +19,10 @@
 				<fa-icon v-if="!active" icon="plus"/>
 				<fa-icon v-else icon="check"/>
 			</div>
-			<div @click="$emit('note-created', {title: '', content: '', type: 'text'})" class="add-item">
+			<div @click="$emit('note-created', {title: '', content: '', active: true})" class="add-item">
 				<fa-icon icon="pen" />
 			</div>
-			<div @click="$emit('note-created', {title: '', content: [], type: 'list'})" class="add-item">
+			<div @click="$emit('note-created', {title: '', content: [], active: true})" class="add-item">
 				<fa-icon icon="stream"/>
 			</div>
 		</div>
@@ -87,7 +87,7 @@
 		name: "Menu",
 		props: {
 			activeFolder: String,
-			active: String,
+			active: Boolean,
 			showAdd: Boolean,
 			showFolders: Boolean
 		},

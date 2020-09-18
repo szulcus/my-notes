@@ -4,7 +4,7 @@
 			class="note"
 			v-for="note in notes"
 			:key="note.id"
-			@click="() => $emit('note-showed', note)"
+			@click="() => $emit('note-showed', {title: note.title, content: note.content, createdAt: note.createdAt, active: true})"
 		>
 			<h3
 				v-if="note.title"
@@ -17,7 +17,7 @@
 				class="text"
 				:class="{same: !note.title}"
 			>
-				<span v-if="note.content && note.type === 'text'">{{note.content}}</span>
+				<span v-if="note.content && typeof(note.content) === 'string'">{{note.content}}</span>
 				<ul v-else class="list">
 					<li class="list-item" v-for="(item, index) in note.content" :key="index">{{item.content}}</li>
 				</ul>
@@ -31,13 +31,14 @@
 		name: "Notes",
 		props: {
 			notes: Array,
-			show: String
+			show: Boolean
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.notes-wrapper {
+		width: 100%;
 		max-width: 1000px;
 		display: grid;
 		grid-template-columns: repeat(2, calc(50% - 5px));
@@ -57,7 +58,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		border: 1px solid $secondary;
+		border: 2px solid $secondary;
 		border-radius: 10px;
 		padding: 10px;
 		@media (hover: hover) {

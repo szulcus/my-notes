@@ -1,7 +1,7 @@
 <template>
 	<div class="create-note-wrapper">
 		<input id="title" class="title" type="text" placeholder="Tytuł" v-model="note.title" autocomplete="off" />
-		<textarea v-if="note.type === 'text'" class="text-note" type="text" placeholder="Wpisz treść..." v-model="note.content" />
+		<textarea v-if="typeof(note.content) === 'string'" class="text-note" type="text" placeholder="Wpisz treść..." v-model="note.content" />
 		<div class="list-note" v-else>
 			<div id="list" class="list">
 				<div class="list-item" @load="scrollToLast" v-for="(item, index) in note.content" :key="index">
