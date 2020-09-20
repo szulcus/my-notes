@@ -14,8 +14,8 @@ html {
 body {
 	min-height: 100%;
 	margin: 0;
-	background-color: $bg;
-	color: $primary;
+	background-color: var(--bg);
+	color: var(--primary);
 	font-size: 16px;
 	font-family: 'Grandstander', sans-serif;
 	#app {
@@ -44,21 +44,21 @@ button {
 	}
 }
 input {
-	border-bottom: 2px solid $decorative;
-	color: $primary;
+	border-bottom: 2px solid var(--decorative);
+	color: var(--primary);
 	@include placeholder();
 }
 textarea {
-	border: 2px solid $decorative;
+	border: 2px solid var(--decorative);
 	border-radius: 10px;
 	margin: 10px;
 	padding: 10px;
-	color: $primary;
+	color: var(--primary);
 	@include placeholder();
 }
 button {
-	background-color: $decorative;
-	color: $bg;
+	background-color: var(--decorative);
+	color: var(--bg);
 	font-weight: bold;
 	border-radius: 10px;
 	transition: transform 0.1s ease;

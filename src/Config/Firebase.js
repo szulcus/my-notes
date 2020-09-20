@@ -29,6 +29,39 @@ Vue.prototype.$st = firebase.storage();
 
 firebase.auth().onAuthStateChanged(user => {
 	if (user) {
+		firebase.firestore().collection('users').doc(user.email).get().then(snap => {
+			// --bg: #202020;
+			// --decorative: limegreen;
+			// --primary: lightgray;
+			// --secondary: gray;
+			// --weak: white;
+			// --strong: black;
+			// --wrong: tomato;
+			// --correct: limegreen;
+			const colors = Object.entries(snap.data().config.colors)
+			colors.forEach(color => {
+				document.documentElement.style.setProperty(`--${color[0]}`, color[1]);
+			})
+		})
+	}
+	else {
+		const colors = [
+			['bg', '#202020'],
+			['decorative', 'limegreen'],
+			['primary', 'lightgray'],
+			['secondary', 'gray'],
+			['weak', 'white'],
+			['strong', 'black'],
+			['wrong', 'tomato'],
+			['correct', 'limegreen'],
+		]
+		colors.forEach(color => {
+			document.documentElement.style.setProperty(`--${color[0]}`, color[1]);
+		})
+	}
+})
+firebase.auth().onAuthStateChanged(user => {
+	if (user) {
 		Vue.prototype.$user = user;
 	}
 })

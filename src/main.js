@@ -5,6 +5,7 @@ import '@/Config/FaIcons.js'
 import '@/Styles/Global.scss'
 import '@/Config/Firebase'
 import '@/Config/Fragment'
+import i18n from './i18n'
 
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -14,7 +15,18 @@ window.addEventListener('resize', () => {
 });
 
 Vue.config.productionTip = false
+
+router.beforeEach((to, from, next) => {
+    let lang = to.params.lang
+    if (!lang) {
+        lang = 'pl'
+    }
+    i18n.locale = lang
+    next()
+})
+
 new Vue({
-	router,
-	render: h => h(App)
+    router,
+    i18n,
+    render: h => h(App)
 }).$mount('#app')

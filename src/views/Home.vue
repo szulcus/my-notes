@@ -1,8 +1,9 @@
 <template>
 	<div class="home-wrapper">
-		<Title
+		<Header
 			:auth="auth"
 		/>
+		<p>{{$t('message')}}</p>
 		<Notes
 			:notes="notes"
 			:show="note.active"
@@ -34,7 +35,7 @@
 
 <script>
 import Notes from '@/Components/MyNotes/Notes.vue'
-import Title from '@/Components/MyNotes/Title.vue'
+import Header from '@/Components/MyNotes/Header.vue'
 import Menu from '@/Components/MyNotes/Menu.vue'
 import CreateNote from '@/Components/MyNotes/CreateNote.vue'
 import notes from '@/Assets/Json/notes.json'
@@ -42,7 +43,7 @@ import notes from '@/Assets/Json/notes.json'
 export default {
 	name: 'Home',
 	components: {
-		Title,
+		Header,
 		Menu,
 		CreateNote,
 		Notes
@@ -58,7 +59,8 @@ export default {
 			auth: {
 				loggedIn: false,
 				photoUrl: '',
-				email: ''
+				email: '',
+				nick: ''
 			},
 			action: '',
 			showAddMenu: false,
@@ -72,11 +74,11 @@ export default {
 		this.$au.onAuthStateChanged(user => {
 			if (user) {
 				console.log('logged in', user)
-				const {photoURL} = user
 				this.auth = {
 					loggedIn: true,
 					email: user.email,
-					photoURL
+					photoURL: user.photoURL,
+					nick: user.displayName
 				}
 				this.$db.collection('users').doc(user.email).onSnapshot(snap => {
 					const originalNotes = snap.data().notes[this.activeFolder]
@@ -110,7 +112,7 @@ export default {
 			if (this.note.title || this.note.content.length !== 0) {
 					if (this.note.createdAt && this.note.createdAt === this.constNotes[this.note.createdAt].createdAt) {
 						const sec = this.note.createdAt
-						if (this.auth.loggetIn) {
+						if (this.auth.loggedIn) {
 							this.$db.collection('users').doc(this.auth.email).update({
 								[`notes.${this.activeFolder}.${sec}`]: this.note
 							})
@@ -129,7 +131,7 @@ export default {
 					else {
 						const sec = Math.round(new Date().getTime()).toString()
 						this.note.createdAt = sec
-						if (this.auth.loggetIn) {
+						if (this.auth.loggedIn) {
 							this.$db.collection('users').doc(this.auth.email).update({
 								[`notes.${this.activeFolder}.${sec}`]: this.note
 							})

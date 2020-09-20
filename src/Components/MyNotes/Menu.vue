@@ -109,7 +109,7 @@
 		bottom: 20px;
 		display: flex;
 		flex-direction: column-reverse;
-		color: $bg;
+		color: var(--bg);
 		z-index: 2;
 		transition: transform 0.5s ease;
 		animation: bounce 0.3s ease;
@@ -135,7 +135,7 @@
 		display: none;
 		justify-content: center;
 		align-items: center;
-		background-color: $decorative;
+		background-color: var(--decorative);
 		font-size: 20px;
 		border-radius: 100%;
 		margin-bottom: 10px;
@@ -164,9 +164,9 @@
 		display: none;
 		justify-content: center;
 		align-items: center;
-		background-color: $decorative;
+		background-color: var(--decorative);
 		border-radius: 100%;
-		color: $bg;
+		color: var(--bg);
 		animation: bounce 0.3s 0.5s both;
 		&:nth-child(2) {
 			left: calc(50vw - 15px + 60px);

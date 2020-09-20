@@ -23,8 +23,8 @@
 		methods: {
 			async login(email, password) {
 				try {
-					const user = this.$au.signInWithEmailAndPassword(email, password)
-					console.log(user)
+					await this.$au.signInWithEmailAndPassword(email, password)
+					this.$router.push(`/${this.$i18n.locale}/profile`)
 				}
 				catch(err) {
 					this.error = err

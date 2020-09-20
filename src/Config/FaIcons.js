@@ -5,14 +5,16 @@ import {
 	faPlus, faTimes, faStream, faPen, faCheck,
 	faFolder, faTrash, faDownload, faHome, faEraser,
 	faUser, faLock, faSignature, faMale, faFemale,
-	faSignInAlt, faSignOutAlt
+	faSignInAlt, faSignOutAlt,
+	faAngleDown
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
 	faPlus, faTimes, faStream, faPen, faCheck,
 	faFolder, faTrash, faDownload, faHome, faEraser,
 	faUser, faLock, faSignature, faMale, faFemale,
-	faSignInAlt, faSignOutAlt
+	faSignInAlt, faSignOutAlt,
+	faAngleDown
 )
 
 Vue.component('fa-icon', FontAwesomeIcon)

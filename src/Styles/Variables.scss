@@ -1,8 +1,100 @@
-$bg: #202020;
-$decorative: limegreen;
-$primary: lightgray;
-$secondary: gray;
-$white: white;
-$black: black;
-$wrong: tomato;
-$correct: limegreen
+:root {
+	--bg: #202020;
+	--decorative: transparent;
+	--primary: transparent;
+	--secondary: transparent;
+	--weak: transparent;
+	--strong: transparent;
+	--wrong: transparent;
+	--correct: transparent;
+}
+
+// -default-
+// $bg: #202020;
+// $decorative: limegreen;
+// $primary: lightgray;
+// $secondary: gray;
+// $weak: white;
+// $strong: black;
+// $wrong: tomato;
+// $correct: limegreen;
+
+// -fortune-
+// $bg: #202020;
+// $decorative: gold;
+// $primary: lightgray;
+// $secondary: gray;
+// $weak: white;
+// $strong: black;
+// $wrong: tomato;
+// $correct: limegreen;
+
+// -happines-
+// $bg: #202020;
+// $decorative: skyblue;
+// $primary: lightgray;
+// $secondary: gray;
+// $weak: white;
+// $strong: black;
+// $wrong: tomato;
+// $correct: limegreen;
+
+// -propitious-
+// $bg: #202020;
+// $decorative: #5CB3FF;
+// $primary: lightgray;
+// $secondary: gray;
+// $weak: white;
+// $strong: black;
+// $wrong: tomato;
+// $correct: limegreen;
+
+// -amazing-
+// $bg: #202020;
+// $decorative: #9f8fdf;
+// $primary: lightgray;
+// $secondary: gray;
+// $weak: white;
+// $strong: black;
+// $wrong: tomato;
+// $correct: limegreen;
+
+// -dreams-
+// $bg: #202020;
+// $decorative: #ffb8cb;
+// $primary: lightgray;
+// $secondary: gray;
+// $weak: white;
+// $strong: black;
+// $wrong: tomato;
+// $correct: limegreen;
+
+// -heartiful-
+// $bg: #f0f0f0;
+// $decorative: red;
+// $primary: #606060;
+// $secondary: gray;
+// $weak: black;
+// $strong: white;
+// $wrong: red;
+// $correct: limegreen;
+
+// -chocolate-
+// $bg: #f2f2f2;
+// $decorative: chocolate;
+// $primary: #3c3c3c;
+// $secondary: gray;
+// $weak: black;
+// $strong: white;
+// $wrong: red;
+// $correct: limegreen;
+
+// -SKY-
+// $bg: #f0f0f0;
+// $decorative: deepskyblue;
+// $primary: #606060;
+// $secondary: skyblue;
+// $weak: black;
+// $strong: white;
+// $wrong: red;
+// $correct: limegreen;

@@ -58,7 +58,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		border: 2px solid $secondary;
+		border: 2px solid var(--secondary);
 		border-radius: 10px;
 		padding: 10px;
 		@media (hover: hover) {

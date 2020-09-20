@@ -40,6 +40,7 @@
 							}).then(() => {
 								const user = this.$au.currentUser;
 								user.updateProfile({
+									displayName: nick,
 									photoURL: gender === 'male' ? (
 										'https://firebasestorage.googleapis.com/v0/b/mynotes-36c73.appspot.com/o/man.png?alt=media&token=628c901f-eea0-456b-b16a-9f32005c0338'
 									) : (
@@ -48,8 +49,8 @@
 								}).catch(err => {
 									console.log(err)
 								});
+								this.$router.push('/')
 							})
-							this.$router.push('/')
 						}).catch(err => {
 							this.error = err
 						})

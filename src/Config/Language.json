@@ -1,0 +1,51 @@
+{
+	"en": {
+		"notes": {
+			
+		},
+		"forms": {
+			"login": {
+				"name": "Login",
+				"inputs": {
+					"login": "Login",
+					"password": "Password"
+				},
+				"buttonContent": "Log In",
+				"question": {
+					"content": "Have an account?",
+					"link": {
+						"to": "/register",
+						"content": "Register"
+					}
+				}
+			},
+			"register": {
+
+			}
+		}
+	},
+	"pl": {
+		"notes": {
+			
+		},
+		"forms": {
+			
+		}
+	},
+	"de": {
+		"notes": {
+			
+		},
+		"forms": {
+			
+		}
+	},
+	"ru": {
+		"notes": {
+			
+		},
+		"forms": {
+			
+		}
+	}
+}

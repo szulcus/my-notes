@@ -6,14 +6,7 @@
 			<div id="list" class="list">
 				<div class="list-item" @load="scrollToLast" v-for="(item, index) in note.content" :key="index">
 					<fragment v-if="item.content">
-						<label class="custom-checkbox">
-							<input
-								type="checkbox"
-								:checked="item.complete"
-								@click="$emit('item-completed', index)"
-							/>
-							<span class="checkmark"></span>
-						</label>
+						<Checkbox :checked="item.complete" @clicked="$emit('item-completed', index)" />
 						<div class="list-item-edit-wrapper">
 							<div
 								contenteditable="true"
@@ -41,8 +34,12 @@
 </template>
 
 <script>
+	import Checkbox from '@/Components/Global/Checkbox.vue'
 	export default {
 		name: "CreateNote",
+		components: {
+			Checkbox
+		},
 		props: {
 			note: Object
 		},
@@ -70,7 +67,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		background-color: $black;
+		background-color: var(--strong);
 		border-radius: 30px;
 		transform: translateX(-50%);
 		animation: writeElation 0.3s ease;
@@ -109,7 +106,7 @@
 			font-size: 18px;
 			margin: 10px 0;
 			animation: opacity 0.3s ease;
-			.custom-checkbox {
+			/* .custom-checkbox {
 				display: block;
 				min-width: 25px;
 				height: 25px;
@@ -119,7 +116,7 @@
 					position: relative;
 					width: 100%;
 					height: 100%;
-					border: 2px solid $decorative;
+					border: 2px solid var(--decorative);
 					display: inline-block;
 					border-radius: 5px;
 					transition: all 0.2s ease;
@@ -130,7 +127,7 @@
 						left: 50%;
 						transform: translate(-50%, -50%) scale(0.5) rotate(50deg);
 						font-family: "FontAwesome";
-						color: $black;
+						color: var(--strong);
 						opacity: 0;
 						transition: all 0.2s 0.1s ease;
 					}
@@ -139,7 +136,7 @@
 					display: none;
 					&:checked {
 						& + .checkmark {
-							background-color: $decorative;
+							background-color: var(--decorative);
 							&::before {
 								transform: translate(-50%, -50%) scale(1) rotate(0);
 								opacity: 1;
@@ -147,7 +144,7 @@
 						}
 					}
 				}
-			}
+			} */
 			.complete {
 				opacity: 0.5;
 				text-decoration: line-through;
@@ -165,13 +162,13 @@
 					position: absolute;
 					top: 50%;
 					right: -20px;
-					color: $decorative;
+					color: var(--decorative);
 					transform: translateY(-50%);
 					animation: opacity 0.3s 0.1s both;
 					cursor: pointer;
 				}
 				&:focus {
-					background: $bg;
+					background: var(--bg);
 					padding: 7px 7px 5px 7px;
 					+ .bin {
 						display: block;

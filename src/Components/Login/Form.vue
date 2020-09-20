@@ -48,47 +48,45 @@
 			</div>
 			<div class="gender-choise" v-if="type === 'register'">
 				<div class="gender">
-					<label class="custom-checkbox">
-						<input
-							type="checkbox"
-							:checked="gender === 'male'"
-							@click="() => {gender !== 'male' ? gender = 'male' : gender = ''}"
-						/>
-						<span class="checkmark"></span>
-					</label>
+					<Checkbox
+						:checked="gender === 'male'"
+						@clicked="() => {gender !== 'male' ? gender = 'male' : gender = ''}"
+					/>
 					<fa-icon icon="male" class="gender-icon" />
 				</div>
 				<div class="gender">
-					<label class="custom-checkbox">
-						<input
-							type="checkbox"
-							:checked="gender === 'female'"
-							@click="() => {gender !== 'female' ? gender = 'female' : gender = ''}"
-						/>
-						<span class="checkmark"></span>
-					</label>
+					<Checkbox
+						:checked="gender === 'female'"
+						@clicked="() => {gender !== 'female' ? gender = 'female' : gender = ''}"
+					/>
 					<fa-icon icon="female" class="gender-icon" />
 				</div>
 				
 			</div>
-			<router-link v-if="type === 'login'" to="/login" class="forgotten">Zapomniałeś hasła?</router-link>
+			<router-link v-if="type === 'login'" :to="{name: 'Login'}" class="forgotten">Zapomniałeś hasła?</router-link>
 			<div v-if="error" class="error">
 				{{error.code === 'auth/email-already-in-use' ? 'Podany adres e-mail jest już używany!' : error.message}}
 			</div>
 		</div>
 		<div class="submit-div">
-			<button type="submit" class="button">{{type === 'login' ? 'Zaloguj się' : 'Zarejestruj się'}}</button>
+			<Button type="submit" :content="type === 'login' ? 'Zaloguj się' : 'Zarejestruj się'" />
 			<div class="registration">
 				{{type === 'login' ? 'Nie masz jeszce konta?' : 'Masz już konto?'}}
-				<router-link :to="type === 'login' ? '/register' : '/login'" class="registration-link">{{type === 'login' ? 'Zarejestruj się' : 'Zaloguj się'}}</router-link>
+				<router-link :to="type === 'login' ? {name: 'Register'} : {name: 'Login'}" class="registration-link">{{type === 'login' ? 'Zarejestruj się' : 'Zaloguj się'}}</router-link>
 			</div>
 		</div>
 	</form>
 </template>
 
 <script>
+	import Button from '@/Components/Global/Button.vue'
+	import Checkbox from '@/Components/Global/Checkbox.vue'
 	export default {
 		name: "Form",
+		components: {
+			Button,
+			Checkbox
+		},
 		props: {
 			type: String,
 			error: Object
@@ -120,7 +118,7 @@
 			font-weight: bold;
 			letter-spacing: 1px;
 			&::first-letter {
-				color: $decorative;
+				color: var(--decorative);
 			}
 			@media (min-height: 350px) {
 				display: block;
@@ -146,7 +144,7 @@
 						~ .label::after {
 							content: '\f00c';
 							font-family: FontAwesome;
-							color: $decorative;
+							color: var(--decorative);
 							margin-left: 5px;
 						}
 					}
@@ -155,7 +153,7 @@
 					position: absolute;
 					top: 20px;
 					left: 10px;
-					color: $primary;
+					color: var(--primary);
 					z-index: -1;
 					transition: all 0.2s ease;
 					.icon {
@@ -176,112 +174,27 @@
 					font-size: 30px;
 				}
 			}
-			.custom-checkbox {
-				display: block;
-				min-width: 25px;
-				height: 25px;
-				margin-right: 10px;
-				cursor: pointer;
-				.checkmark {
-					position: relative;
-					width: 100%;
-					height: 100%;
-					border: 2px solid $decorative;
-					display: inline-block;
-					border-radius: 5px;
-					transition: all 0.2s ease;
-					&::before {
-						content: '\f00c';
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%, -50%) scale(0.5) rotate(50deg);
-						font-family: "FontAwesome";
-						color: $black;
-						opacity: 0;
-						transition: all 0.2s 0.1s ease;
-					}
-				}
-				input {
-					display: none;
-					&:checked {
-						& + .checkmark {
-							background-color: $decorative;
-							&::before {
-								transform: translate(-50%, -50%) scale(1) rotate(0);
-								opacity: 1;
-							}
-						}
-					}
-				}
-			}
 		}
 		.forgotten {
-			color: $secondary;
+			color: var(--secondary);
 			text-decoration: none;
 			transition: all 0.2s ease;
 			&:hover {
-				color: $primary;
+				color: var(--primary);
 			}
 		}
 		.error {
-			color: $wrong
-		}
-		.button {
-			display: none;
-			position: relative;
-			font-size: 20px;
-			padding: 15px 20px;
-			margin: 30px 0;
-			background-color: transparent;
-			border-radius: 30px;
-			border: 2px solid $decorative;
-			color: $primary;
-			letter-spacing: 1px;
-			transition: background-color 0.5s ease, transform 0.2s ease;
-			overflow: hidden;
-			outline: none;
-			&::before {
-				content: '';
-				display: block;
-				position: absolute;
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				background-color: $decorative;
-				opacity: 0.5;
-				filter: blur(5px);
-				transform: translateX(-200px) skewX(-15deg);
-				transition: all 0.7s ease;
-				z-index: 2;
-			}
-			&:hover {
-				cursor: pointer;
-				background-color: $decorative;
-				color: $bg;
-				&::before {
-					transform: translate(200px) skewX(-15deg);
-					opacity: 0.6;
-					transition: all 0.7s ease;
-				}
-			}
-			&:active{
-				transform: scale(0.95);
-			}
-			@media (min-height: 300px) {
-				display: block;
-			}
+			color: var(--wrong)
 		}
 		.submit-div {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			.registration {
-				color: $secondary;
+				color: var(--secondary);
 				.registration-link {
 					/* display: block; */
-					color: $decorative;
+					color: var(--decorative);
 					text-decoration: none;
 					font-weight: bold;
 				}

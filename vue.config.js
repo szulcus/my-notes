@@ -1,8 +1,9 @@
 module.exports = {
-	publicPath: process.env.NODE_ENV === 'production'
-		? '/REPO_NAME/'
+    publicPath: process.env.NODE_ENV === 'production'
+		? '/my-notes/'
 		: '/',
-	css: {
+
+    css: {
 		loaderOptions: {
 			sass: {
 				prependData: `
@@ -11,5 +12,14 @@ module.exports = {
 				`
 			}
 		}
-	}
+	},
+
+    pluginOptions: {
+      i18n: {
+        locale: 'pl',
+        fallbackLocale: 'pl',
+        localeDir: 'Locales',
+        enableInSFC: false
+      }
+    }
 };
