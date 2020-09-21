@@ -1,0 +1,90 @@
+{
+	"notes": {
+		"main": {
+			"[time1]": {
+				"title": "Bienvenue sur MyNotes!",
+				"content": "Ici, vous pourrez créer vos notes et listes, dont un exemple peut être trouvé ici.\n\nNous vous souhaitons un travail fructueux! :)",
+				"createdAt": "[time1]"
+			},
+			"[time2]": {
+				"title": "Liste de courses",
+				"content": [
+					{
+						"content": "pain",
+						"complete": false
+					},
+					{
+						"content": "hoummous",
+						"complete": false
+					},
+					{
+						"content": "tomates",
+						"complete": false
+					},
+					{
+						"content": "concombre",
+						"complete": false
+					},
+					{
+						"content": "paprika (acheté)",
+						"complete": true
+					}
+				],
+				"createdAt": "[time2]"
+			}
+		},
+		"archived": {
+			"[time1]": {
+				"title": "Les notes archivées apparaîtront ici",
+				"content": "Le contenu d'une note archivée.\n\nPour déplacer une note vers la corbeille ou la restaurer dans le dossier principal, cliquez sur l'icône appropriée.",
+				"createdAt": "[time1]"
+			}
+		},
+		"deleted": {
+			"[time1]": {
+				"title": "Les notes supprimées apparaîtront ici",
+				"content": "Le contenu de la note supprimée.\n\nPour supprimer complètement une note, cliquez sur l'icône de la gomme. Cependant, pour le restaurer dans le dossier principal, cliquez sur la maison.",
+				"createdAt": "[time1]"
+			}
+		}
+	},
+	"forms": {
+		"login": {
+			"title": "Š'identifier",
+			"inputs": {
+				"login": "Login",
+				"password": "Passe"
+			},
+			"forgotPassword": "Mot de passe oublié?",
+			"submit": "Se connecter",
+			"question": {
+				"content": "Vous n'avez pas encore de compte?",
+				"link": {
+					"content": "S'inscrire",
+					"to": "Register"
+				}
+			}
+		},
+		"register": {
+			"title": "Enregistrement",
+			"inputs": {
+				"nick": "Pseudo",
+				"login": "Login",
+				"password": "Passe"
+			},
+			"submit": "S'inscrire",
+			"question": {
+				"content": "Vous avez déjà un compte?",
+				"link": {
+					"content": "Connectez-vous à l'application",
+					"to": "Login"
+				}
+			},
+			"alert": "Choisissez d'abord votre sexe"
+		},
+		"errors": {
+			"auth/email-already-in-use": "L'adresse e-mail fournie est déjà utilisée!",
+			"auth/wrong-password": "Mot de passe incorrect!"
+		}
+	}
+}

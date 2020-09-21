@@ -1,12 +1,14 @@
 :root {
 	--bg: #202020;
-	--decorative: transparent;
-	--primary: transparent;
-	--secondary: transparent;
-	--weak: transparent;
-	--strong: transparent;
-	--wrong: transparent;
-	--correct: transparent;
+	--decorative: limegreen;
+	--primary: lightgray;
+	--secondary: gray;
+	--secondary-dark: #404040;
+	--lang-selected: #555555;
+	--weak: white;
+	--strong: black;
+	--wrong: tomato;
+	--correct: limegreen;
 }
 
 // -default-

@@ -1,0 +1,90 @@
+{
+	"notes": {
+		"main": {
+			"[time1]": {
+				"title": "Vítejte v MyNotes!",
+				"content": "Zde budete moci vytvářet své poznámky a seznamy, jejichž příklad najdete zde. \n\nPřejeme vám plodnou práci! :)",
+				"createdAt": "[time1]"
+			},
+			"[time2]": {
+				"title": "Nákupní seznam",
+				"content": [
+					{
+						"content": "chléb",
+						"complete": false
+					},
+					{
+						"content": "humus",
+						"complete": false
+					},
+					{
+						"content": "rajčata",
+						"complete": false
+					},
+					{
+						"content": "okurka",
+						"complete": false
+					},
+					{
+						"content": "paprika (koupená)",
+						"complete": true
+					}
+				],
+				"createdAt": "[time2]"
+			}
+		},
+		"archived": {
+			"[time1]": {
+				"title": "Zde se zobrazí archivované poznámky",
+				"content": "Obsah archivované poznámky. \n\nChcete-li poznámku přesunout do koše nebo ji obnovit do hlavní složky, klikněte na příslušnou ikonu.",
+				"createdAt": "[time1]"
+			}
+		},
+		"deleted": {
+			"[time1]": {
+				"title": "Zde se zobrazí smazané poznámky",
+				"content": "Obsah odstraněné poznámky. \n\nChcete-li poznámku úplně odstranit, klikněte na ikonu gumy. Chcete-li jej však obnovit do hlavní složky, klikněte na dům.",
+				"createdAt": "[time1]"
+			}
+		}
+	},
+	"forms": {
+		"login": {
+			"title": "Přihlašovací",
+			"inputs": {
+				"login": "Přihlašovací jméno",
+				"password": "Heslo"
+			},
+			"forgotPassword": "Zapomněli jste heslo?",
+			"submit": "Přihlásit se",
+			"question": {
+				"content": "Ještě nemáte účet?",
+				"link": {
+					"content": "Registrovat",
+					"to": "Register"
+				}
+			}
+		},
+		"register": {
+			"title": "Registrace",
+			"inputs": {
+				"nick": "Nicku",
+				"login": "Přihlašovací jméno",
+				"password": "Heslo"
+			},
+			"submit": "Registrovat",
+			"question": {
+				"content": "Máte již účet?",
+				"link": {
+					"content": "Přihlásit se",
+					"to": "Login"
+				}
+			},
+			"alert": "Nejprve vyberte své pohlaví"
+		},
+		"errors": {
+			"auth/email-already-in-use": "Zadaná e-mailová adresa se již používá!",
+			"auth/wrong-password": "Nesprávné heslo!"
+		}
+	}
+}

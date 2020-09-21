@@ -10,7 +10,6 @@
 
 <script>
 	import Form from '@/Components/Login/Form.vue'
-	import notes from '@/Assets/Json/notes.json'
 
 	export default {
 		name: "Login",
@@ -28,13 +27,25 @@
 					try {
 						this.$au.createUserWithEmailAndPassword(email, password).then(data => {
 							const date = new Date().getTime()
-							const notesObj = JSON.stringify(notes).replace(/\[time1\]/g, date).replace(/\[time2\]/g, date + 1)
+							const notesObj = JSON.stringify(this.$t('notes')).replace(/\[time1\]/g, date).replace(/\[time2\]/g, date + 1)
 							this.$db.collection('users').doc(data.user.email).set({
 								info: {
 									email: data.user.email,
 									uid: data.user.uid,
 									nick,
 									gender
+								},
+								config: {
+									colors: {
+										bg: '#202020',
+										decorative: 'limegreen',
+										primary: 'lightgray',
+										secondary: 'gray',
+										weak: 'white',
+										strong: 'black',
+										wrong: 'tomato',
+										correct: 'limegreen',
+									}
 								},
 								notes: JSON.parse(notesObj)
 							}).then(() => {
@@ -49,7 +60,9 @@
 								}).catch(err => {
 									console.log(err)
 								});
-								this.$router.push('/')
+								this.$router.push({
+									name: 'Home'
+								})
 							})
 						}).catch(err => {
 							this.error = err
@@ -60,7 +73,7 @@
 					}
 				}
 				else {
-					alert('Najpierw wybierz płeć!')
+					alert(this.$t('forms.register.alert'))
 				}
 			},
 

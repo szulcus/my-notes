@@ -71,6 +71,7 @@
 		border-radius: 30px;
 		transform: translateX(-50%);
 		animation: writeElation 0.3s ease;
+		z-index: 2;
 	}
 	.title {
 		width: 90%;

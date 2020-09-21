@@ -1,3 +1,90 @@
 {
-  "message": "Cześć i18n !!"
+	"notes": {
+		"main": {
+			"[time1]": {
+				"title": "Witaj w MyNotes!",
+				"content": "Tutaj będziesz mógł tworzyć swoje notatki oraz listy, której przykład znajdziesz obok.\n\nŻyczymy owocnej pracy! :)",
+				"createdAt": "[time1]"
+			},
+			"[time2]": {
+				"title": "Lista zakupów",
+				"content": [
+					{
+						"content": "chleb",
+						"complete": false
+					},
+					{
+						"content": "hummus",
+						"complete": false
+					},
+					{
+						"content": "pomidory",
+						"complete": false
+					},
+					{
+						"content": "ogórek",
+						"complete": false
+					},
+					{
+						"content": "papryka (kupione)",
+						"complete": true
+					}
+				],
+				"createdAt": "[time2]"
+			}
+		},
+		"archived": {
+			"[time1]": {
+				"title": "Tutaj pojawiać się będą zarchiwizowane notatki",
+				"content": "Treść zarchiwizowanej notatki.\n\nAby przenieść notatkę do kosza, lub przywrócić ją do folderu głównego, kliknij na odpowiednią ikonkę.",
+				"createdAt": "[time1]"
+			}
+		},
+		"deleted": {
+			"[time1]": {
+				"title": "Tutaj pojawiać się będą usunięte notatki",
+				"content": "Treść usuniętej notatki.\n\nAby usunąć notatkę całkowicie, kliknij na ikonkę gumki. Natomiast by przywrócić ją do folderu głównego, kliknij na domek.",
+				"createdAt": "[time1]"
+			}
+		}
+	},
+	"forms": {
+		"login": {
+			"title": "Logowanie",
+			"inputs": {
+				"login": "Login",
+				"password": "Hasło"
+			},
+			"forgotPassword": "Zapomniałeś hasła?",
+			"submit": "Zaloguj się",
+			"question": {
+				"content": "Nie masz jeszcze konta?",
+				"link": {
+					"content": "Zarejestruj się",
+					"to": "Register"
+				}
+			}
+		},
+		"register": {
+			"title": "Rejestracja",
+			"inputs": {
+				"nick": "Nick",
+				"login": "Login",
+				"password": "Hasło"
+			},
+			"submit": "Zarejestruj się",
+			"question": {
+				"content": "Masz już konto?",
+				"link": {
+					"content": "Zaloguj się",
+					"to": "Login"
+				}
+			},
+			"alert": "Najpierw wybierz płeć"
+		},
+		"errors": {
+			"auth/email-already-in-use": "Podany adres e-mail jest już używany!",
+			"auth/wrong-password": "Niepoprawne hasło!"
+		}
+	}
 }

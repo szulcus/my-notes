@@ -1,0 +1,91 @@
+{
+	"message": "Cześć i18n !!",
+	"notes": {
+		"main": {
+			"[time1]": {
+				"title": "Willkommen bei MyNotes!",
+				"content": "Hier können Sie Ihre Notizen und Listen erstellen. Ein Beispiel hierfür finden Sie hier.\n\nWir wünschen Ihnen fruchtbare Arbeit! :)",
+				"createdAt": "[time1]"
+			},
+			"[time2]": {
+				"title": "Einkaufsliste",
+				"content": [
+					{
+						"content": "Brot",
+						"complete": false
+					},
+					{
+						"content": "Hummus",
+						"complete": false
+					},
+					{
+						"content": "Tomaten",
+						"complete": false
+					},
+					{
+						"content": "Gurke",
+						"complete": false
+					},
+					{
+						"content": "Paprika (gekauft)",
+						"complete": true
+					}
+				],
+				"createdAt": "[time2]"
+			}
+		},
+		"archived": {
+			"[time1]": {
+				"title": "Archivierte Notizen werden hier angezeigt",
+				"content": "Der Inhalt einer archivierten Notiz.\n\nUm eine Notiz in den Papierkorb zu verschieben oder im Hauptordner wiederherzustellen, klicken Sie auf das entsprechende Symbol.",
+				"createdAt": "[time1]"
+			}
+		},
+		"deleted": {
+			"[time1]": {
+				"title": "Gelöschte Notizen werden hier angezeigt",
+				"content": "Der Inhalt der gelöschten Notiz.\n\nUm eine Notiz vollständig zu löschen, klicken Sie auf das Radiergummisymbol. Um es jedoch im Hauptordner wiederherzustellen, klicken Sie auf das Haus.",
+				"createdAt": "[time1]"
+			}
+		}
+	},
+	"forms": {
+		"login": {
+			"title": "Anmeldung",
+			"inputs": {
+				"login": "Login",
+				"password": "Passwort"
+			},
+			"forgotPassword": "Hast du dein Passwort vergessen?",
+			"submit": "Anmelden",
+			"question": {
+				"content": "Sie haben noch keinen Account?",
+				"link": {
+					"content": "Registrieren",
+					"to": "Register"
+				}
+			}
+		},
+		"register": {
+			"title": "Anmeldung",
+			"inputs": {
+				"nick": "Nick",
+				"login": "Login",
+				"password": "Passwort"
+			},
+			"submit": "Registrieren",
+			"question": {
+				"content": "Sie haben bereits ein Konto?",
+				"link": {
+					"content": "Anmelden",
+					"to": "Login"
+				}
+			},
+			"alert": "Wählen Sie zunächst Ihr Geschlecht"
+		},
+		"errors": {
+			"auth/email-already-in-use": "Die angegebene E-Mail-Adresse wird bereits verwendet!",
+			"auth/wrong-password": "Falsches Passwort!"
+		}
+	}
+}

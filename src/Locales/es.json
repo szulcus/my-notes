@@ -1,0 +1,90 @@
+{
+	"notes": {
+		"main": {
+			"[time1]": {
+				"title": "¡Bienvenido a MyNotes!",
+				"content": "Aquí podrá crear sus notas y listas, un ejemplo de las cuales se puede encontrar aquí.\n\n¡Le deseamos un trabajo fructífero! :)",
+				"createdAt": "[time1]"
+			},
+			"[time2]": {
+				"title": "Lista de la compra",
+				"content": [
+					{
+						"content": "pan de molde",
+						"complete": false
+					},
+					{
+						"content": "hummus",
+						"complete": false
+					},
+					{
+						"content": "tomates",
+						"complete": false
+					},
+					{
+						"content": "pepino",
+						"complete": false
+					},
+					{
+						"content": "pimentón (comprado)",
+						"complete": true
+					}
+				],
+				"createdAt": "[time2]"
+			}
+		},
+		"archived": {
+			"[time1]": {
+				"title": "Las notas archivadas aparecerán aquí",
+				"content": "El contenido de una nota archivada.\n\nPara mover una nota a la papelera o restaurarla a la carpeta principal, haga clic en el icono correspondiente.",
+				"createdAt": "[time1]"
+			}
+		},
+		"deleted": {
+			"[time1]": {
+				"title": "Las notas eliminadas aparecerán aquí",
+				"content": "El contenido de la nota eliminada.\n\nPara eliminar una nota por completo, haga clic en el icono de borrador. Sin embargo, para restaurarlo a la carpeta principal, haga clic en la casa.",
+				"createdAt": "[time1]"
+			}
+		}
+	},
+	"forms": {
+		"login": {
+			"title": "Iniciar sesión",
+			"inputs": {
+				"login": "Login",
+				"password": "Contraseña"
+			},
+			"forgotPassword": "¿Olvidaste tu contraseña?",
+			"submit": "Iniciar sesión",
+			"question": {
+				"content": "¿Aún no tienes una cuenta?",
+				"link": {
+					"content": "Registrarse",
+					"to": "Register"
+				}
+			}
+		},
+		"register": {
+			"title": "Registro",
+			"inputs": {
+				"nick": "Mella",
+				"login": "Login",
+				"password": "Contraseña"
+			},
+			"submit": "Regístrese",
+			"question": {
+				"content": "¿Ya tienes una cuenta?",
+				"link": {
+					"content": "Iniciar sesión",
+					"to": "Login"
+				},
+				"alert": "Primero, elige tu género"
+			}
+		},
+		"errors": {
+			"auth/email-already-in-use": "¡La dirección de correo electrónico proporcionada ya está en uso!",
+			"auth/wrong-password": "¡Contraseña incorrecta!"
+		}
+	}
+}

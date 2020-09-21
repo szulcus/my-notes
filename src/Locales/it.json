@@ -1,0 +1,90 @@
+{
+	"notes": {
+		"main": {
+			"[time1]": {
+				"title": "Benvenuto in MyNotes!",
+				"content": "Qui potrai creare le tue note ed elenchi, un esempio dei quali può essere trovato qui.\n\nVi auguriamo buon lavoro! :)",
+				"createdAt": "[time1]"
+			},
+			"[time2]": {
+				"title": "Lista della spesa",
+				"content": [
+					{
+						"content": "pane",
+						"complete": false
+					},
+					{
+						"content": "hummus",
+						"complete": false
+					},
+					{
+						"content": "pomodori",
+						"complete": false
+					},
+					{
+						"content": "cetriolo",
+						"complete": false
+					},
+					{
+						"content": "paprika (acquistata)",
+						"complete": true
+					}
+				],
+				"createdAt": "[time2]"
+			}
+		},
+		"archived": {
+			"[time1]": {
+				"title": "Le note archiviate verranno visualizzate qui",
+				"content": "Il contenuto di una nota archiviata.\n\nPer spostare una nota nel cestino o ripristinarla nella cartella principale, fare clic sull'icona appropriata.",
+				"createdAt": "[time1]"
+			}
+		},
+		"deleted": {
+			"[time1]": {
+				"title": "Le note eliminate verranno visualizzate qui",
+				"content": "Il contenuto della nota eliminata.\n\nPer eliminare completamente una nota, fare clic sull'icona della gomma. Tuttavia, per ripristinarlo nella cartella principale, fare clic sulla casa.",
+				"createdAt": "[time1]"
+			}
+		}
+	},
+	"forms": {
+		"login": {
+			"title": "Accesso",
+			"inputs": {
+				"login": "Login",
+				"password": "Password"
+			},
+			"forgotPassword": "Hai dimenticato la password?",
+			"submit": "Accedi",
+			"question": {
+				"content": "Non hai ancora un account?",
+				"link": {
+					"content": "Registrati",
+					"to": "Register"
+				}
+			}
+		},
+		"register": {
+			"title": "Registrazione",
+			"inputs": {
+				"nick": "Nick",
+				"login": "Login",
+				"password": "Password"
+			},
+			"submit": "Registrati",
+			"question": {
+				"content": "Hai già un account?",
+				"link": {
+					"content": "Accedi",
+					"to": "Login"
+				}
+			},
+			"alert": "Prima scegli il tuo sesso"
+		},
+		"errors": {
+			"auth/email-already-in-use": "L'indirizzo e-mail fornito è già in uso!",
+			"auth/wrong-password": "Password errata!"
+		}
+	}
+}

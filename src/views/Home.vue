@@ -2,8 +2,8 @@
 	<div class="home-wrapper">
 		<Header
 			:auth="auth"
+			@notes-updated="updateNotes"
 		/>
-		<p>{{$t('message')}}</p>
 		<Notes
 			:notes="notes"
 			:show="note.active"
@@ -38,7 +38,6 @@ import Notes from '@/Components/MyNotes/Notes.vue'
 import Header from '@/Components/MyNotes/Header.vue'
 import Menu from '@/Components/MyNotes/Menu.vue'
 import CreateNote from '@/Components/MyNotes/CreateNote.vue'
-import notes from '@/Assets/Json/notes.json'
 
 export default {
 	name: 'Home',
@@ -92,9 +91,8 @@ export default {
 				})
 			}
 			else {
-				console.log('not logged in')
 				const date = new Date().getTime()
-				this.allNotes = JSON.parse(JSON.stringify(notes).replace(/\[time1\]/g, date).replace(/\[time2\]/g, date + 1))
+				this.allNotes = JSON.parse(JSON.stringify(this.$t('notes')).replace(/\[time1\]/g, date).replace(/\[time2\]/g, date + 1))
 
 				const originalNotes = this.allNotes[this.activeFolder]
 				const notesArray = []
@@ -107,6 +105,19 @@ export default {
 		})
 	},
 	methods: {
+		updateNotes() {
+			if (!this.auth.loggedIn) {
+				const date = new Date().getTime()
+				this.allNotes = JSON.parse(JSON.stringify(this.$t('notes')).replace(/\[time1\]/g, date).replace(/\[time2\]/g, date + 1))
+				const originalNotes = this.allNotes[this.activeFolder]
+				const notesArray = []
+				Object.keys(this.allNotes[this.activeFolder]).sort().forEach(key => {
+					notesArray.push(originalNotes[key])
+				})
+				this.notes = notesArray
+				this.constNotes = originalNotes
+			}
+		},
 		confirm() {
 			console.log('confirm')
 			if (this.note.title || this.note.content.length !== 0) {

@@ -1,4 +1,5 @@
 @import 'https://fonts.googleapis.com/css2?family=Grandstander:wght@300;400;700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap';
 @import 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
 @import "@/Styles/Variables.scss";
 * {
@@ -17,7 +18,7 @@ body {
 	background-color: var(--bg);
 	color: var(--primary);
 	font-size: 16px;
-	font-family: 'Grandstander', sans-serif;
+	font-family: 'Grandstander', 'Balsamiq Sans', sans-serif;
 	#app {
 		height: calc(100 * var(--vh));
 		padding: 20px;
@@ -27,7 +28,7 @@ input,
 textarea,
 button {
 	font-size: 18px;
-	font-family: 'Grandstander', sans-serif;
+	font-family: 'Grandstander', 'Balsamiq Sans', sans-serif;
 	background: transparent;
 	border: none;
 	margin: 10px 0;

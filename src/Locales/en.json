@@ -1,3 +1,90 @@
 {
-  "message": "Heello"
+	"notes": {
+		"main": {
+			"[time1]": {
+				"title": "Welcome to MyNotes!",
+				"content": "Here you will be able to create your notes and lists, an example of which can be found here.\n\nWe wish you productive work! :)",
+				"createdAt": "[time1]"
+			},
+			"[time2]": {
+				"title": "Shopping list",
+				"content": [
+					{
+						"content": "bread",
+						"complete": false
+					},
+					{
+						"content": "hummus",
+						"complete": false
+					},
+					{
+						"content": "tomatoes",
+						"complete": false
+					},
+					{
+						"content": "cucumber",
+						"complete": false
+					},
+					{
+						"content": "paprika (bought)",
+						"complete": true
+					}
+				],
+				"createdAt": "[time2]"
+			}
+		},
+		"archived": {
+			"[time1]": {
+				"title": "Archived notes will appear here",
+				"content": "The contents of an archived note.\n\nTo move a note to the trash or restore it to the main folder, click on the appropriate icon.",
+				"createdAt": "[time1]"
+			}
+		},
+		"deleted": {
+			"[time1]": {
+				"title": "Deleted notes will appear here",
+				"content": "The contents of the deleted note.\n\nTo delete a note permanently, click on the eraser icon. And to restore it to the root folder, click on the house.",
+				"createdAt": "[time1]"
+			}
+		}
+	},
+	"forms": {
+		"login": {
+			"title": "Log In",
+			"inputs": {
+				"login": "Login",
+				"password": "Password"
+			},
+			"forgotPassword": "Forgot your password?",
+			"submit": "Sign In",
+			"question": {
+				"content": "You don't have an account yet?",
+				"link": {
+					"content": "Register",
+					"to": "Register"
+				}
+			}
+		},
+		"register": {
+			"title": "Registration",
+			"inputs": {
+				"nick": "Nick",
+				"login": "Login",
+				"password": "Password"
+			},
+			"submit": "Register",
+			"question": {
+				"content": "Already have an account?",
+				"link": {
+					"content": "Sign In",
+					"to": "Login"
+				},
+				"alert": "First, choose your gender"
+			}
+		},
+		"errors": {
+			"auth/email-already-in-use": "Podany adres e-mail jest już używany!",
+			"auth/wrong-password": "Niepoprawne hasło!"
+		}
+	}
 }

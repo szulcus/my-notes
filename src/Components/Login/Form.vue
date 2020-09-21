@@ -1,7 +1,7 @@
 <template>
 	<form class="form-wrapper" @submit.prevent="type === 'login' ? $emit('submited', email, password) : $emit('submited', nick, email, password, gender)">
 		<header class="title">
-			{{type === 'login' ? 'Logowanie' : 'Rejestracja'}}
+			{{$t(`forms.${type}.title`)}}
 		</header>
 		<div class="input-divs">
 			<div class="input-div" v-if="type === 'register'">
@@ -15,7 +15,7 @@
 				/>
 				<label class="label">
 					<fa-icon icon="signature" class="icon" />
-					Nick
+					{{$t(`forms.${type}.inputs.nick`)}}
 				</label>
 			</div>
 			<div class="input-div">
@@ -29,7 +29,7 @@
 				/>
 				<label class="label">
 					<fa-icon icon="user" class="icon" />
-					Login
+					{{$t(`forms.${type}.inputs.login`)}}
 				</label>
 			</div>
 			<div class="input-div">
@@ -43,7 +43,7 @@
 				/>
 				<label class="label">
 					<fa-icon icon="lock" class="icon" />
-					Hasło
+					{{$t(`forms.${type}.inputs.password`)}}
 				</label>
 			</div>
 			<div class="gender-choise" v-if="type === 'register'">
@@ -63,16 +63,17 @@
 				</div>
 				
 			</div>
-			<router-link v-if="type === 'login'" :to="{name: 'Login'}" class="forgotten">Zapomniałeś hasła?</router-link>
+			<router-link v-if="type === 'login'" :to="{name: 'Login'}" class="forgotten">{{$t(`forms.${type}.forgotPassword`)}}</router-link>
 			<div v-if="error" class="error">
-				{{error.code === 'auth/email-already-in-use' ? 'Podany adres e-mail jest już używany!' : error.message}}
+				{{ Object.keys($t(`forms.errors`)).includes(error.code) ? $t(`forms.errors.${error.code}`) : error.message }}
+				<!-- {{error.code === 'auth/email-already-in-use' ? 'Podany adres e-mail jest już używany!' : error.message}} -->
 			</div>
 		</div>
 		<div class="submit-div">
-			<Button type="submit" :content="type === 'login' ? 'Zaloguj się' : 'Zarejestruj się'" />
+			<Button type="submit" :content="$t(`forms.${type}.submit`)" />
 			<div class="registration">
-				{{type === 'login' ? 'Nie masz jeszce konta?' : 'Masz już konto?'}}
-				<router-link :to="type === 'login' ? {name: 'Register'} : {name: 'Login'}" class="registration-link">{{type === 'login' ? 'Zarejestruj się' : 'Zaloguj się'}}</router-link>
+				{{$t(`forms.${type}.question.content`)}}
+				<router-link :to="{name: $t(`forms.${type}.question.link.to`)}" class="registration-link">{{$t(`forms.${type}.question.link.content`)}}</router-link>
 			</div>
 		</div>
 	</form>
@@ -176,9 +177,11 @@
 			}
 		}
 		.forgotten {
+			display: block;
 			color: var(--secondary);
 			text-decoration: none;
 			transition: all 0.2s ease;
+			margin-bottom: 10px;
 			&:hover {
 				color: var(--primary);
 			}
