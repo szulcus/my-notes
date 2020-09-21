@@ -62,7 +62,6 @@
 		display: flex;
 		flex-direction: column;
 		width: 100px;
-		margin-right: 10px;
 		text-transform: uppercase;
 		font-weight: bold;
 		letter-spacing: 1px;
@@ -92,7 +91,7 @@
 				transform: translateY(-50%) rotate(180deg);
 			}
 			& ~ .options-container {
-				max-height: 140px;
+				max-height: 220px;
 				opacity: 1;
 				overflow-y: scroll;
 				&::-webkit-scrollbar{
