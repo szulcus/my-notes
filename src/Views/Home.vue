@@ -69,6 +69,16 @@ export default {
 			activeFolder: 'main'
 		}
 	},
+	watch: {
+		activeFolder(newActiveFolder) {
+			console.log(newActiveFolder);
+		}
+	},
+	computed: {
+		activeFolderExtend() {
+			return `${this.activeFolder}-test`
+		}
+	},
 	mounted() {
 		this.$au.onAuthStateChanged(user => {
 			if (user) {

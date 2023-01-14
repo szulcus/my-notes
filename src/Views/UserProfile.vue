@@ -7,8 +7,10 @@
 				:content="nick"
 			/>
 			<Settings />
-			<p>{{$t('message')}}</p>
-			<Button content="Wyloguj się" @clicked="logOut" />
+			<div class="buttons">
+				<Button content="Strona główna" @clicked="logOut" />
+				<Button content="Wyloguj się" @clicked="logOut" />
+			</div>
 		</fragment>
 		<fragment v-else-if="loggedIn === false">
 			Nie jesteś zalogowany!
@@ -55,7 +57,7 @@
 				try {
 					const data = await this.$au.signOut()
 					console.log(data)
-					this.$router.push(`/${this.$i18n.locale}/login`)
+					this.$router.push({name: 'Login'})
 				}
 				catch(err) {
 					console.log(err)
@@ -74,5 +76,8 @@
 		justify-content: space-between;
 		align-items: center;
 		text-align: center;
+		.buttons {
+			display: flex;
+		}
 	}
 </style>

@@ -87,5 +87,104 @@
 			"auth/email-already-in-use": "Die angegebene E-Mail-Adresse wird bereits verwendet!",
 			"auth/wrong-password": "Falsches Passwort!"
 		}
+	},
+	"note-borders": {
+		"not-important": {
+			"name": "Keine Ursache",
+			"color": "#32CD32"
+		},
+		"necessary": {
+			"name": "Notwendige",
+			"color": "#FF0000"
+		},
+		"valuable": {
+			"name": "Wertvoller",
+			"color": "#FFD700"
+		},
+		"important": {
+			"name": "Ein wichtiges",
+			"color": "#D3D3D3"
+		},
+		"ordinary": {
+			"name": "Gewöhnliche",
+			"color": "#808080"
+		}
+	},
+	"themes": {
+		"default": {
+			"name": "Standard",
+			"colors": {
+				"bg": "#202020",
+				"decorative": "limegreen",
+				"primary": "lightgray",
+				"secondary": "gray",
+				"secondary-dark": "#404040",
+				"lang-selected": "#555555",
+				"weak": "white",
+				"strong": "black",
+				"wrong": "tomato",
+				"correct": "limegreen"
+			}
+		},
+		"fortune": {
+			"name": "Geld",
+			"colors": {
+				"bg": "#202020",
+				"decorative": "gold",
+				"primary": "lightgray",
+				"secondary": "gray",
+				"secondary-dark": "#404040",
+				"lang-selected": "#555555",
+				"weak": "white",
+				"strong": "black",
+				"wrong": "tomato",
+				"correct": "limegreen"
+			}
+		},
+		"happines": {
+			"name": "Glücks",
+			"colors": {
+				"bg": "#202020",
+				"decorative": "#5CB3FF",
+				"primary": "lightgray",
+				"secondary": "gray",
+				"secondary-dark": "#404040",
+				"lang-selected": "#555555",
+				"weak": "white",
+				"strong": "black",
+				"wrong": "tomato",
+				"correct": "limegreen"
+			}
+		},
+		"amazing": {
+			"name": "Erstaunliches",
+			"colors": {
+				"bg": "#202020",
+				"decorative": "#CFAFFF",
+				"primary": "lightgray",
+				"secondary": "gray",
+				"secondary-dark": "#404040",
+				"lang-selected": "#555555",
+				"weak": "white",
+				"strong": "black",
+				"wrong": "tomato",
+				"correct": "limegreen"
+			}
+		},
+		"dreams": {
+			"name": "Träume",
+			"colors": {
+				"bg": "#202020",
+				"decorative": "#FFB8CB",
+				"primary": "lightgray",
+				"secondary": "gray",
+				"secondary-dark": "#404040",
+				"lang-selected": "#555555",
+				"weak": "white",
+				"strong": "black",
+				"wrong": "tomato",
+				"correct": "limegreen"
+			}
+		}
 	}
 }

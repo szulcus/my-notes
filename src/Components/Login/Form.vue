@@ -21,7 +21,7 @@
 			<div class="input-div">
 				<input
 					class="input"
-					type="text"
+					type="email"
 					placeholder=" "
 					pattern="^\S+@\S+\.\S+$"
 					required

@@ -6,11 +6,16 @@ import i18n from '@/i18n'
 
 Vue.use(VueRouter)
 
-  const children = [
+const children = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: 'test',
+    name: 'Test',
+    component: () => import('@/Views/Test.vue')
   },
   {
     path: `login`,
